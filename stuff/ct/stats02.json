@@ -1,0 +1,41 @@
+{
+  "facilityCode": 13122,
+  "docket": {
+    "name": "NDWH"
+  },
+  "stats": [
+    {
+      "name": "PatientExtract",
+      "recieved": 14
+    },
+    {
+      "name": "PatientAdverseEventExtract",
+      "recieved": 0
+    },
+    {
+      "name": "PatientArtExtract",
+      "recieved": 0
+    },
+    {
+      "name": "PatientBaselineExtract",
+      "recieved": 0
+    },
+    {
+      "name": "PatientLabExtract",
+      "recieved": 0
+    },
+    {
+      "name": "PatientPharmacyExtract",
+      "recieved": 0
+    },
+    {
+      "name": "PatientStatusExtract",
+      "recieved": 4
+    },
+    {
+      "name": "PatientVisitExtract",
+      "recieved": 36
+    }
+  ],
+  "updated": "2020-01-18T18:48:01.91"
+}

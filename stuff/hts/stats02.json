@@ -1,0 +1,37 @@
+{
+  "facilityCode": 13122,
+  "docket": {
+    "name": "HTS"
+  },
+  "stats": [
+    {
+      "name": "HtsClientExtract",
+      "recieved": 27
+    },
+    {
+      "name": "HtsClientLinkageExtract",
+      "recieved": 0
+    },
+    {
+      "name": "HtsClientTestsExtract",
+      "recieved": 27
+    },
+    {
+      "name": "HtsClientTracingExtract",
+      "recieved": 0
+    },
+    {
+      "name": "HtsPartnerNotificationServicesExtract",
+      "recieved": 0
+    },
+    {
+      "name": "HtsPartnerTracingExtract",
+      "recieved": 0
+    },
+    {
+      "name": "HtsTestKitsExtract",
+      "recieved": 0
+    }
+  ],
+  "updated": "2020-01-18T19:06:01.6142"
+}

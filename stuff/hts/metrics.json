@@ -1,0 +1,58 @@
+[
+  {
+    "id": "db30af86-2281-4fdc-9b98-ab46010952a4",
+    "facilityCode": 13122,
+    "facilityName": "Ngara Health Centre (City Council of Nairobi)",
+    "cargo": "{\"Version\":\"2.4.0\",\"Name\":\"CareTreatment\",\"LogDate\":\"2020-01-18T18:42:51.995528\",\"LogValue\":\"{\\\"Name\\\":\\\"CareTreatment\\\",\\\"NoLoaded\\\":0,\\\"Version\\\":\\\"2.4.0\\\",\\\"ActionDate\\\":\\\"2020-01-18T18:42:51.989382+03:00\\\"}\",\"Status\":0,\"Display\":\"Care and Treatment\",\"Action\":\"Loaded\",\"Rank\":1,\"Id\":\"3c3ed43b-4f7a-4f4d-9423-ab460102f750\"}",
+    "cargoType": 2,
+    "facilityManifestId": "e6e0f561-5fe9-4a78-bb24-ab46010952a4"
+  },
+  {
+    "id": "89aad751-00d5-4b42-afab-ab46010952a4",
+    "facilityCode": 13122,
+    "facilityName": "Ngara Health Centre (City Council of Nairobi)",
+    "cargo": "{\"Version\":\"2.4.0\",\"Name\":\"HivTestingService\",\"LogDate\":\"2020-01-18T19:05:54.473116\",\"LogValue\":\"{\\\"Name\\\":\\\"HivTestingService\\\",\\\"NoLoaded\\\":0,\\\"Version\\\":\\\"2.4.0\\\",\\\"ActionDate\\\":\\\"2020-01-18T19:05:54.472173+03:00\\\"}\",\"Status\":0,\"Display\":\"Hiv Testing Services\",\"Action\":\"Loaded\",\"Rank\":3,\"Id\":\"3e620ed8-1183-4b43-a623-ab4601094b67\"}",
+    "cargoType": 2,
+    "facilityManifestId": "e6e0f561-5fe9-4a78-bb24-ab46010952a4"
+  },
+  {
+    "id": "a4521811-f5b5-4c6b-b1bc-ab46010952a4",
+    "facilityCode": 13122,
+    "facilityName": "Ngara Health Centre (City Council of Nairobi)",
+    "cargo": "{\"EmrName\":\"IQCare\",\"EmrVersion\":\"Kenya HMIS Ver 2.2.0\",\"LastLoginDate\":\"2020-01-14T12:23:59.02\",\"LastMoH731RunDate\":\"2019-10-01T00:00:00\",\"DateExtracted\":\"2020-01-14T14:06:14.836665\",\"Id\":\"833ae479-512d-444e-a80b-ab4200b6fd84\"}",
+    "cargoType": 1,
+    "facilityManifestId": "e6e0f561-5fe9-4a78-bb24-ab46010952a4"
+  },
+  {
+    "id": "4cacdb42-053a-44d8-b7b2-ab46010952a4",
+    "facilityCode": 13122,
+    "facilityName": "Ngara Health Centre (City Council of Nairobi)",
+    "cargo": "{\"Version\":\"2.4.0\",\"Name\":\"MasterPatientIndex\",\"LogDate\":\"2020-01-18T18:53:06.605972\",\"LogValue\":\"{\\\"Name\\\":\\\"MasterPatientIndex\\\",\\\"NoLoaded\\\":0,\\\"Version\\\":\\\"2.4.0\\\",\\\"ActionDate\\\":\\\"2020-01-18T18:53:06.605304+03:00\\\"}\",\"Status\":0,\"Display\":\"Master Patient Index\",\"Action\":\"Loaded\",\"Rank\":5,\"Id\":\"71017cc9-ef97-4078-9373-ab460105c78f\"}",
+    "cargoType": 2,
+    "facilityManifestId": "e6e0f561-5fe9-4a78-bb24-ab46010952a4"
+  },
+  {
+    "id": "eac1c7b7-c5b7-49b1-b83b-ab46010952a4",
+    "facilityCode": 13122,
+    "facilityName": "Ngara Health Centre (City Council of Nairobi)",
+    "cargo": "{\"Version\":\"2.4.0\",\"Name\":\"MasterPatientIndex\",\"LogDate\":\"2020-01-18T19:00:26.827935\",\"LogValue\":\"{\\\"Name\\\":\\\"MasterPatientIndex\\\",\\\"NoSent\\\":0,\\\"Version\\\":\\\"2.4.0\\\",\\\"ActionDate\\\":\\\"2020-01-18T19:00:26.824652+03:00\\\"}\",\"Status\":0,\"Display\":\"Master Patient Index\",\"Action\":\"Sent\",\"Rank\":6,\"Id\":\"fceff112-9b7c-4d58-aa93-ab460107cb72\"}",
+    "cargoType": 2,
+    "facilityManifestId": "e6e0f561-5fe9-4a78-bb24-ab46010952a4"
+  },
+  {
+    "id": "585adb54-5068-4323-b861-ab46010952a4",
+    "facilityCode": 13122,
+    "facilityName": "Ngara Health Centre (City Council of Nairobi)",
+    "cargo": "{\"Version\":\"2.4.0\",\"Name\":\"HivTestingService\",\"LogDate\":\"2020-01-18T19:06:00.604845\",\"LogValue\":\"{\\\"Name\\\":\\\"HivTestingService\\\",\\\"NoSent\\\":0,\\\"Version\\\":\\\"2.4.0\\\",\\\"ActionDate\\\":\\\"2020-01-18T19:06:00.60436+03:00\\\"}\",\"Status\":0,\"Display\":\"Hiv Testing Services\",\"Action\":\"Sent\",\"Rank\":4,\"Id\":\"d0fcb433-3560-4d52-95ba-ab4601095297\"}",
+    "cargoType": 2,
+    "facilityManifestId": "e6e0f561-5fe9-4a78-bb24-ab46010952a4"
+  },
+  {
+    "id": "f2f02265-9ed5-4463-be85-ab46010952a4",
+    "facilityCode": 13122,
+    "facilityName": "Ngara Health Centre (City Council of Nairobi)",
+    "cargo": "{\"Version\":\"2.4.0\",\"Name\":\"CareTreatment\",\"LogDate\":\"2020-01-18T18:44:16.979666\",\"LogValue\":\"{\\\"Name\\\":\\\"CareTreatment\\\",\\\"NoSent\\\":0,\\\"Version\\\":\\\"2.4.0\\\",\\\"ActionDate\\\":\\\"2020-01-18T18:44:16.977216+03:00\\\"}\",\"Status\":0,\"Display\":\"Care and Treatment\",\"Action\":\"Sent\",\"Rank\":2,\"Id\":\"0883aad7-2476-47fd-9ef1-ab4601035ae7\"}",
+    "cargoType": 2,
+    "facilityManifestId": "e6e0f561-5fe9-4a78-bb24-ab46010952a4"
+  }
+]

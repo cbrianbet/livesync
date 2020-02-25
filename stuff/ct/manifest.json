@@ -1,0 +1,42 @@
+{
+  "id": "bd025a64-67ea-4e97-acb0-ab46010361de",
+  "facilityCode": 13122,
+  "facilityName": "Ngara Health Centre (City Council of Nairobi)",
+  "docket": "NDWH",
+  "logDate": "2020-01-18T18:44:22.9239246+03:00",
+  "buildDate": "2020-01-18T18:44:22.9239246+03:00",
+  "patientCount": 14,
+  "cargo": null,
+  "metrics": [
+    {
+      "items": "{\"EmrName\":\"IQCare\",\"EmrVersion\":\"Kenya HMIS Ver 2.2.0\",\"LastLoginDate\":\"2020-01-14T12:23:59.02\",\"LastMoH731RunDate\":\"2019-10-01T00:00:00\",\"DateExtracted\":\"2020-01-14T14:06:14.836665\",\"Id\":\"833ae479-512d-444e-a80b-ab4200b6fd84\"}",
+      "facilityManifestId": "bd025a64-67ea-4e97-acb0-ab46010361de",
+      "cargoType": 1,
+      "id": "6ebd62f4-7dc5-4dbe-bad4-ab46010361de",
+      "emr": null,
+      "project": null,
+      "voided": false,
+      "processed": false
+    },
+    {
+      "items": "{\"Version\":\"2.4.0\",\"Name\":\"CareTreatment\",\"LogDate\":\"2020-01-18T18:42:51.995528\",\"LogValue\":\"{\\\"Name\\\":\\\"CareTreatment\\\",\\\"NoLoaded\\\":0,\\\"Version\\\":\\\"2.4.0\\\",\\\"ActionDate\\\":\\\"2020-01-18T18:42:51.989382+03:00\\\"}\",\"Status\":0,\"Display\":\"Care and Treatment\",\"Action\":\"Loaded\",\"Rank\":1,\"Id\":\"3c3ed43b-4f7a-4f4d-9423-ab460102f750\"}",
+      "facilityManifestId": "bd025a64-67ea-4e97-acb0-ab46010361de",
+      "cargoType": 2,
+      "id": "577f1a09-d591-4ed8-9ccf-ab46010361de",
+      "emr": null,
+      "project": null,
+      "voided": false,
+      "processed": false
+    },
+    {
+      "items": "{\"Version\":\"2.4.0\",\"Name\":\"CareTreatment\",\"LogDate\":\"2020-01-18T18:44:16.979666\",\"LogValue\":\"{\\\"Name\\\":\\\"CareTreatment\\\",\\\"NoSent\\\":0,\\\"Version\\\":\\\"2.4.0\\\",\\\"ActionDate\\\":\\\"2020-01-18T18:44:16.977216+03:00\\\"}\",\"Status\":0,\"Display\":\"Care and Treatment\",\"Action\":\"Sent\",\"Rank\":2,\"Id\":\"0883aad7-2476-47fd-9ef1-ab4601035ae7\"}",
+      "facilityManifestId": "bd025a64-67ea-4e97-acb0-ab46010361de",
+      "cargoType": 2,
+      "id": "bc255815-868f-40c0-bafa-ab46010361de",
+      "emr": null,
+      "project": null,
+      "voided": false,
+      "processed": false
+    }
+  ]
+}
