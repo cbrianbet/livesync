@@ -23,6 +23,8 @@ import { StageIndicatorHandler } from './commands/handlers/stage-indicator.handl
 import { Indicator } from '../../domain/indicator.entity';
 import { IndicatorStagedHandler } from './events/handlers/indicator.staged.handler';
 import { GetIndicatorHandler } from './queries/handlers/get-indicator.handler';
+import { HandshakeStagedHandler } from './events/handlers/handshake.staged.handler';
+import { StageHandshakeHandler } from './commands/handlers/stage-handshake.handler';
 
 @Module({
   imports: [
@@ -37,12 +39,14 @@ import { GetIndicatorHandler } from './queries/handlers/get-indicator.handler';
     StageStatsHandler,
     StageMetricHandler,
     StageIndicatorHandler,
+    StageHandshakeHandler,
     SyncHandler,
     UpdateStatusHandler,
     ManifestStagedHandler,
     StatsStagedHanlder,
     MetricStagedHandler,
     IndicatorStagedHandler,
+    HandshakeStagedHandler,
     GetManifestHandler,
     GetStatsHandler,
     GetMetricHandler,

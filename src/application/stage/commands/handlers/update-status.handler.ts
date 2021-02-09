@@ -103,9 +103,13 @@ export class UpdateStatusHandler
       return await this.metricRepository.save(existingMetric);
     }
   }
-  
-  async updateIndicatorsStatus(command: UpdateStatusCommand): Promise<Indicator> {
-    const existingIndicator = await this.indicatorRepository.findOne(command.id);
+
+  async updateIndicatorsStatus(
+    command: UpdateStatusCommand,
+  ): Promise<Indicator> {
+    const existingIndicator = await this.indicatorRepository.findOne(
+      command.id,
+    );
 
     if (existingIndicator) {
       if (command.status === 'SENT') {

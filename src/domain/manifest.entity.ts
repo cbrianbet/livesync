@@ -1,6 +1,7 @@
 import { ManifestStagedEvent } from '../application/stage/events/manifest.staged.event';
 import { Column, Entity, PrimaryColumn } from 'typeorm';
 import { AggregateRoot } from '@nestjs/cqrs';
+import { HandshakeStagedEvent } from '../application/stage/events/handshake.staged.event';
 
 @Entity()
 export class Manifest extends AggregateRoot {
@@ -37,6 +38,18 @@ export class Manifest extends AggregateRoot {
   @Column({ type: 'text', nullable: true })
   statusInfo: string;
 
+  @Column({ type: 'datetime', nullable: true })
+  start: Date;
+
+  @Column({ type: 'datetime', nullable: true })
+  end: Date;
+
+  @Column({ type: 'uuid', nullable: true })
+  session: string;
+
+  @Column({ type: 'text', nullable: true })
+  tag: string;
+
   constructor() {
     super();
   }
@@ -56,5 +69,10 @@ export class Manifest extends AggregateRoot {
     this.status = 'ERROR';
     this.statusDate = new Date();
     this.statusInfo = error;
+  }
+
+  updateSession(end: Date) {
+    this.end = end;
+    this.apply(new HandshakeStagedEvent(this.id));
   }
 }

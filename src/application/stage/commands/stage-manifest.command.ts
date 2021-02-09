@@ -1,4 +1,8 @@
 export class StageManifestCommand {
+  public session?: string;
+  public start?: Date;
+  public end?: Date;
+  public tag?: string;
   constructor(
     public id: string,
     public facilityCode: number,

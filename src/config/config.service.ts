@@ -137,6 +137,6 @@ export class ConfigService {
   }
 
   getRoute(name: string): string {
-    return this.QueueStatsRoutes.find(c => c.includes(name));
+    return this.QueueStatsRoutes.find((c) => c.includes(name));
   }
 }
