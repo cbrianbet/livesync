@@ -6,6 +6,9 @@ import { StageStatsCommand } from '../commands/stage-stats.command';
 import { StageMetricCommand } from '../commands/stage-metric.command';
 import { StageIndicatorCommand } from '../commands/stage-indicator.command';
 import { StageHandshakeCommand } from '../commands/stage-handshake.command';
+import { SyncCommand } from '../commands/sync.command';
+import { HydrateDto } from '../../../domain/dto/hydrate.dto';
+import { Code } from 'typeorm';
 
 @Controller('stages')
 export class StagesController {
@@ -62,5 +65,16 @@ export class StagesController {
   @Post('handshake')
   async logHandshake(@Body() handshakes: any) {
     return this.commandBus.execute(new StageHandshakeCommand(handshakes));
+  }
+
+  @Post('hydrate')
+  async syncStats(@Body() hydrateDto: HydrateDto) {
+    for (const code of hydrateDto.codes) {
+      await this.commandBus.execute(new SyncCommand({
+        facilityCode: code,
+        docket: hydrateDto.docket,
+      }));
+    }
+    return hydrateDto;
   }
 }

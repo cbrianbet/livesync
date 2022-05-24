@@ -24,7 +24,7 @@ export class SyncHandler implements ICommandHandler<SyncCommand> {
   ) {}
 
   async execute(command: SyncCommand): Promise<any> {
-    var stats = await this.repository
+    const stats = await this.repository
       .createQueryBuilder('s')
       .where('s.facilityCode = :facilityCode', {
         facilityCode: command.manifet.facilityCode,
