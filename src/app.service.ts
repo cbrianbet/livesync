@@ -4,8 +4,8 @@ import { Injectable } from '@nestjs/common';
 export class AppService {
   getHello(): any {
     return {
-      name: 'Dwapi LiveSync',
-      build: 'v09FEB211704',
+      name: 'Dwapi LiveSync Staging',
+      build: 'v02SEP220935',
       staus: 'running',
     };
   }
