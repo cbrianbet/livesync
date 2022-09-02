@@ -5,7 +5,7 @@ export class AppService {
   getHello(): any {
     return {
       name: 'Dwapi LiveSync',
-      build: 'v09FEB211704',
+      build: 'v02SEP220935',
       staus: 'running',
     };
   }
