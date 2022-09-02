@@ -75,4 +75,8 @@ export class Manifest extends AggregateRoot {
     this.end = end;
     this.apply(new HandshakeStagedEvent(this.id));
   }
+
+  hydrateSession() {
+    this.apply(new HandshakeStagedEvent(this.id));
+  }
 }
