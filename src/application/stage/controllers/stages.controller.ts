@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, Logger } from '@nestjs/common';
 import { CommandBus } from '@nestjs/cqrs';
 import { StatsDto } from '../../../domain/dto/stats.dto';
 import { StageManifestCommand } from '../commands/stage-manifest.command';
@@ -65,12 +65,16 @@ export class StagesController {
   @Post('hydrate')
   async syncStats(@Body() hydrateDto: HydrateDto) {
     for (const code of hydrateDto.codes) {
-      await this.commandBus.execute(
-        new SyncCommand({
-          facilityCode: code,
-          docket: hydrateDto.docket,
-        }),
-      );
+      try{
+        await this.commandBus.execute(
+          new SyncCommand({
+            facilityCode: code,
+            docket: hydrateDto.docket,
+          }),
+        );
+      } catch(error){
+        Logger.error(error)
+      }
     }
     return hydrateDto;
   }
