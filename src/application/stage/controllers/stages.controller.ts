@@ -8,6 +8,8 @@ import { StageIndicatorCommand } from '../commands/stage-indicator.command';
 import { StageHandshakeCommand } from '../commands/stage-handshake.command';
 import { SyncCommand } from '../commands/sync.command';
 import { HydrateDto } from '../../../domain/dto/hydrate.dto';
+import { SyncAllCommand } from '../commands/sync-all.command';
+import { SyncAllManifestsCommand } from './../commands/sync-all-manifests.command';
 
 @Controller('stages')
 export class StagesController {
@@ -65,16 +67,45 @@ export class StagesController {
   @Post('hydrate')
   async syncStats(@Body() hydrateDto: HydrateDto) {
     for (const code of hydrateDto.codes) {
-      try{
+      try {
         await this.commandBus.execute(
           new SyncCommand({
             facilityCode: code,
             docket: hydrateDto.docket,
           }),
         );
-      } catch(error){
-        Logger.error(error)
+      } catch (error) {
+        Logger.error(error);
       }
+    }
+    return hydrateDto;
+  }
+
+  @Post('hydrateAll')
+  async hydrateAll(@Body() hydrateDto: HydrateDto) {
+    try {
+      await this.commandBus.execute(
+        new SyncAllCommand({
+          facilityCode: 0,
+          docket: '',
+        }),
+      );
+    } catch (error) {
+      Logger.error(error);
+    }
+    return hydrateDto;
+  }
+
+  @Post('hydrateAllManifests')
+  async hydrateAllManifests(@Body() hydrateDto: HydrateDto) {
+    try {
+      await this.commandBus.execute(
+        new SyncAllManifestsCommand({
+          date: hydrateDto.date,
+        }),
+      );
+    } catch (error) {
+      Logger.error(error);
     }
     return hydrateDto;
   }
