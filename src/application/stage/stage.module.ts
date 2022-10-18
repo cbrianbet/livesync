@@ -25,10 +25,12 @@ import { IndicatorStagedHandler } from './events/handlers/indicator.staged.handl
 import { GetIndicatorHandler } from './queries/handlers/get-indicator.handler';
 import { HandshakeStagedHandler } from './events/handlers/handshake.staged.handler';
 import { StageHandshakeHandler } from './commands/handlers/stage-handshake.handler';
+import { SyncAllHandler } from './commands/handlers/sync-all.handler';
+import { SyncAllManifestsHandler } from './commands/handlers/sync-all-manifests.handler';
 
 @Module({
   imports: [
-    MessagingModule,
+  MessagingModule,
     ConfigModule,
     CqrsModule,
     TypeOrmModule.forFeature([Manifest, Stats, Metric, Indicator]),
@@ -52,6 +54,8 @@ import { StageHandshakeHandler } from './commands/handlers/stage-handshake.handl
     GetMetricHandler,
     GetIndicatorHandler,
     MessagingService,
+    SyncAllHandler,
+    SyncAllManifestsHandler
   ],
   controllers: [StagesController],
 })
