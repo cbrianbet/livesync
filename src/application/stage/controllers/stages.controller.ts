@@ -1,5 +1,5 @@
-import { Body, Controller, Get, Inject, Post } from '@nestjs/common';
-import { CommandBus, QueryBus } from '@nestjs/cqrs';
+import { Body, Controller, Post, Logger } from '@nestjs/common';
+import { CommandBus } from '@nestjs/cqrs';
 import { StatsDto } from '../../../domain/dto/stats.dto';
 import { StageManifestCommand } from '../commands/stage-manifest.command';
 import { StageStatsCommand } from '../commands/stage-stats.command';
@@ -8,15 +8,12 @@ import { StageIndicatorCommand } from '../commands/stage-indicator.command';
 import { StageHandshakeCommand } from '../commands/stage-handshake.command';
 import { SyncCommand } from '../commands/sync.command';
 import { HydrateDto } from '../../../domain/dto/hydrate.dto';
-import { Code } from 'typeorm';
+import { SyncAllCommand } from '../commands/sync-all.command';
+import { SyncAllManifestsCommand } from './../commands/sync-all-manifests.command';
 
 @Controller('stages')
 export class StagesController {
-  constructor(
-    private readonly commandBus: CommandBus,
-    private readonly queryBus: QueryBus,
-  ) {
-  }
+  constructor(private readonly commandBus: CommandBus) {}
 
   @Post('manifest')
   async logManifest(@Body() manifest: any) {
@@ -54,12 +51,12 @@ export class StagesController {
 
   @Post('metric')
   async logMetric(@Body() metrics: any[]) {
-    this.commandBus.execute(new StageMetricCommand(metrics));
+    await this.commandBus.execute(new StageMetricCommand(metrics));
   }
 
   @Post('indicator')
   async logIndicator(@Body() indicators: any[]) {
-    this.commandBus.execute(new StageIndicatorCommand(indicators));
+    await this.commandBus.execute(new StageIndicatorCommand(indicators));
   }
 
   @Post('handshake')
@@ -70,10 +67,45 @@ export class StagesController {
   @Post('hydrate')
   async syncStats(@Body() hydrateDto: HydrateDto) {
     for (const code of hydrateDto.codes) {
-      await this.commandBus.execute(new SyncCommand({
-        facilityCode: code,
-        docket: hydrateDto.docket,
-      }));
+      try {
+        await this.commandBus.execute(
+          new SyncCommand({
+            facilityCode: code,
+            docket: hydrateDto.docket,
+          }),
+        );
+      } catch (error) {
+        Logger.error(error);
+      }
+    }
+    return hydrateDto;
+  }
+
+  @Post('hydrateAll')
+  async hydrateAll(@Body() hydrateDto: HydrateDto) {
+    try {
+      await this.commandBus.execute(
+        new SyncAllCommand({
+          facilityCode: 0,
+          docket: '',
+        }),
+      );
+    } catch (error) {
+      Logger.error(error);
+    }
+    return hydrateDto;
+  }
+
+  @Post('hydrateAllManifests')
+  async hydrateAllManifests(@Body() hydrateDto: HydrateDto) {
+    try {
+      await this.commandBus.execute(
+        new SyncAllManifestsCommand({
+          date: hydrateDto.date,
+        }),
+      );
+    } catch (error) {
+      Logger.error(error);
     }
     return hydrateDto;
   }
