@@ -22,7 +22,7 @@ jobs:
            sudo mkdir livesync
            sudo chown -R cicd:cicd livesync
            git config --global --add safe.directory /apps/githubworkflows/livesync
-           cd /apps/githubworkflows/spot-stats
+           cd /apps/githubworkflows/livesync
            git clone -b staging https://github.com/palladiumkenya/livesync.git .
            sudo chown -R cicd:cicd /apps/githubworkflows/livesync
            git status
