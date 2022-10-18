@@ -12,7 +12,7 @@ RUN yarn build
 
 ENV TIMEZONE Africa/Narobi
 
-EXPOSE 4777
+EXPOSE 4707
 
 #RUN yarn server:prod
 
