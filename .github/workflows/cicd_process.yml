@@ -28,6 +28,6 @@ jobs:
            git status
            sudo cp /apps/dockerApps/spotstaging/livesync/production.env /apps/githubworkflows/livesync
            sudo docker build -t cicdapplication/livesync:latest .
-           sudo docker stop livesync
-           sudo docker rm livesync
+           sudo docker stop spot-livesync
+           sudo docker rm spot-livesync
            sudo docker run -p 4707:4707 -d --name=spot-livesync --restart=always --net spotapps_spot --link rabbitmq cicdapplication/livesync:latest 
