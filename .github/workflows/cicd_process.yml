@@ -1,0 +1,33 @@
+name: deploy to spot-staging
+on:
+  push:
+    branches: [ staging ]
+jobs:
+
+  build:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote connection
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.CICD_SECRET }}
+        port: ${{ secrets.PORT }}
+        command_timeout: 200m
+        script: |
+           cd /apps/githubworkflows 
+           sudo rm -rf livesync 
+           sudo mkdir livesync
+           sudo chown -R cicd:cicd livesync
+           git config --global --add safe.directory /apps/githubworkflows/livesync
+           cd /apps/githubworkflows/spot-stats
+           git clone -b staging https://github.com/palladiumkenya/livesync.git .
+           sudo chown -R cicd:cicd /apps/githubworkflows/livesync
+           git status
+           sudo cp /apps/dockerApps/spotstaging/livesync/production.env /apps/githubworkflows/livesync
+           sudo docker build -t cicdapplication/livesync:latest .
+           sudo docker stop livesync
+           sudo docker rm livesync
+           sudo docker run -p 4707:4707 -d --name=spot-livesync --restart=always --net spotapps_spot --link rabbitmq cicdapplication/livesync:latest 
